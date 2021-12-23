@@ -1,18 +1,12 @@
 pipeline {
     agent {
-        docker { image 'maven:3.8.4' }
-	}
-	stages {
-		stage('Build') {
-			steps {
-				sh 'mvn --version'
-				echo "Build"
-			}
-		}
-		stage('Test') {
-			steps {
-				echo "Test"
-			}
-		}
-	}
+        docker { image 'node:16.13.1-alpine' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
